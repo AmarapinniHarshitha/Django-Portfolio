@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Manage Projects - Harshitha Amarapinni{% endblock %}
+
+{% block content %}
+<div class="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-7xl">
+        
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-white">Harshitha</h1>
+            <p class="text-gray-400 mt-1">Developer & Cybersecurity Enthusiast</p>
+        </div>
+
+        <!-- DATABASE / INVENTORY MANAGEMENT Tag -->
+        <div class="mb-4">
+            <span class="text-green-400 font-mono text-sm">DATABASE / INVENTORY MANAGEMENT</span>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="bg-gray-900/70 backdrop-blur-sm rounded-2xl border border-gray-800 overflow-hidden shadow-2xl">
+            
+            <!-- Card Header -->
+            <div class="px-8 py-6 border-b border-gray-800">
+                <h2 class="text-2xl font-semibold text-white">Manage Projects</h2>
+            </div>
+
+            <!-- Projects Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <!-- Table Head -->
+                    <thead class="bg-gray-800/50">
+                        <tr class="text-left">
+                            <th class="px-8 py-5 text-sm font-medium text-gray-400 uppercase">MODULE ID</th>
+                            <th class="px-6 py-5 text-sm font-medium text-gray-400 uppercase">PROJECT TITLE</th>
+                            <th class="px-6 py-5 text-sm font-medium text-gray-400 uppercase">TECH STACK</th>
+                            <th class="px-6 py-5 text-sm font-medium text-gray-400 uppercase text-right">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- Table Body -->
+                    <tbody class="divide-y divide-gray-800">
+                        {% for project in projects %}
+                        <tr class="hover:bg-gray-800/30 transition-colors">
+                            <td class="px-8 py-5 whitespace-nowrap">
+                                <span class="text-blue-400 font-mono font-medium">#{{ forloop.counter|stringformat:"02d" }}</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-white font-medium">{{ project.title }}</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-gray-300">{{ project.tech_stack }}</span>
+                            </td>
+                            <td class="px-6 py-5 whitespace-nowrap text-right">
+                                <div class="flex items-center justify-end gap-3">
+                                    <a href="{% url 'project-update' project.slug %}" 
+                                       class="text-blue-400 hover:text-blue-300 border border-blue-400/30 px-3 py-1 rounded">
+                                        [ EDIT ]
+                                    </a>
+                                    <a href="{% url 'project-delete' project.slug %}" 
+                                       class="text-red-400 hover:text-red-300 border border-red-400/30 px-3 py-1 rounded">
+                                        [ Delete ]
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <!-- Empty State -->
+                        <tr>
+                            <td colspan="4" class="px-8 py-16 text-center">
+                                <p class="text-gray-400 text-lg">No projects found.</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <a href="{% url 'project-create' %}" 
+               class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+                + Initialize New Module
+            </a>
+            
+            <a href="{% url 'dashboard' %}" 
+               class="inline-flex items-center justify-center px-6 py-4 text-gray-400 hover:text-white transition">
+                - Return to Main Terminal
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
