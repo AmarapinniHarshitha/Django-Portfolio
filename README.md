@@ -35,19 +35,19 @@ This project is designed to demonstrate backend architecture, authentication sys
 
 ## 📁 Project Structure
 
-portfolio_project/
-│
-├── accounts/           → Authentication & Dashboard
-├── api/                → REST API
-├── contact/            → Contact form & email logic
-├── media/              → Uploaded media files
-├── portfolio/          → Core app
-├── portfolio_project/  → Main settings & URL configuration
-├── projects/           → Project models & views
-├── screenshots/        → README screenshots
-├── static/             → Static files
-├── staticfiles/        → Collected static files
-└──  theme/              → UI templates & theme configuration
+## 📁 Project Structure
+
+accounts/ → Authentication & Dashboard  
+api/ → REST API  
+contact/ → Contact form & email logic  
+media/ → Uploaded media files  
+portfolio/ → Core application  
+portfolio_project/ → Main settings & URL configuration  
+projects/ → Project models & views  
+screenshots/ → README screenshots  
+static/ → Static assets  
+staticfiles/ → Collected static files  
+theme/ → UI templates & theme configuration  
 
 ---
 
