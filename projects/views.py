@@ -6,7 +6,6 @@ from django.http import Http404
 from .models import Project
 from .forms import ProjectForm
 
-@login_required
 def project_list(request):
     """View all projects"""
     projects = Project.objects.all()
@@ -32,7 +31,6 @@ def project_list(request):
     }
     return render(request, 'projects/project_list.html', context)
 
-@login_required
 def project_detail(request, slug):
     """View single project"""
     # This will automatically return 404 if project doesn't exist
