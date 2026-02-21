@@ -24,10 +24,10 @@
     </div>
 </section>
 
-<!-- Stats Cards -->
+<!-- Stats Cards - REMOVED Total Views and Unread Messages, kept only project stats -->
 <section class="py-4 px-6">
     <div class="container mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mb-6 max-w-2xl mx-auto">
             <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50">
                 <p class="text-gray-400 text-sm">Total Projects</p>
                 <p class="text-3xl font-bold text-blue-400">{{ total_projects }}</p>
@@ -35,14 +35,6 @@
             <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50">
                 <p class="text-gray-400 text-sm">Active Projects</p>
                 <p class="text-3xl font-bold text-green-400">{{ active_projects }}</p>
-            </div>
-            <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50">
-                <p class="text-gray-400 text-sm">Total Views</p>
-                <p class="text-3xl font-bold text-purple-400">{{ total_views }}</p>
-            </div>
-            <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50">
-                <p class="text-gray-400 text-sm">Unread Messages</p>
-                <p class="text-3xl font-bold text-yellow-400">{{ unread_messages }}</p>
             </div>
         </div>
     </div>
@@ -81,7 +73,7 @@
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-lg font-semibold text-gray-300 flex items-center">
                             <span class="w-1 h-5 bg-pink-500 rounded-full mr-3"></span>
-                            Your Projects
+                            Manage Projects
                         </h2>
                         <span class="text-2xl font-bold text-blue-400">{{ total_projects }}</span>
                     </div>
@@ -117,7 +109,7 @@
                 </div>
             </div>
 
-            <!-- Right Column - Profile & Skills -->
+            <!-- Right Column - Profile Only (Skills and Most Viewed removed) -->
             <div class="space-y-6">
                 <!-- Profile Card -->
                 <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 text-center">
@@ -145,80 +137,6 @@
                     <a href="{% url 'project-list' %}" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition block">
                         Manage Projects
                     </a>
-                </div>
-
-                <!-- Skills Progress -->
-                <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-                    <h3 class="text-lg font-semibold mb-4 text-gray-300 flex items-center">
-                        <span class="w-1 h-5 bg-yellow-500 rounded-full mr-3"></span>
-                        Skills
-                    </h3>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="text-gray-400">Python</span>
-                                <span class="text-blue-400">90%</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="text-gray-400">Django</span>
-                                <span class="text-blue-400">85%</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="text-gray-400">Cybersecurity</span>
-                                <span class="text-blue-400">75%</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div class="flex justify-between text-xs mb-1">
-                                <span class="text-gray-400">Docker</span>
-                                <span class="text-blue-400">70%</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style="width: 70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button class="mt-4 text-blue-400 hover:text-blue-300 text-xs flex items-center">
-                        <span>Update Skills</span>
-                        <span class="ml-1">→</span>
-                    </button>
-                </div>
-                
-                <!-- Popular Projects -->
-                <div class="bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
-                    <h3 class="text-lg font-semibold mb-4 text-gray-300 flex items-center">
-                        <span class="w-1 h-5 bg-green-500 rounded-full mr-3"></span>
-                        Most Viewed
-                    </h3>
-                    
-                    <div class="space-y-3">
-                        {% for project in popular_projects %}
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-300">{{ project.title|truncatechars:15 }}</span>
-                            <span class="text-xs text-blue-400">{{ project.views }} views</span>
-                        </div>
-                        {% empty %}
-                        <p class="text-gray-500 text-sm">No projects yet</p>
-                        {% endfor %}
-                    </div>
                 </div>
             </div>
         </div>

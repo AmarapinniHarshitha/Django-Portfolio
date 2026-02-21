@@ -1,4 +1,4 @@
-# 🚀 Django Portfolio (Production-Ready)
+# 🚀 Django Portfolio 
 
 A full-stack Django portfolio application with a custom CMS dashboard, secure environment configuration, and PostgreSQL integration.
 
@@ -118,6 +118,11 @@ python manage.py runserver
 ### 👤 About Page
 ![About](screenshots/about.png)
 
+### 🏆 Achievements Page
+![Achievements](screenshots/achievements.png)
+
+### 🛠 Skills Page
+![Skills](screenshots/skills.png)
 ---
 
 ## 🌍 Deployment
