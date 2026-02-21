@@ -26,7 +26,7 @@ This project is designed to demonstrate backend architecture, authentication sys
 
 - **Backend:** Django 5
 - **Database:** PostgreSQL
-- **Frontend:** HTML, CSS (Custom Glass UI)
+- **Frontend:** HTML, CSS
 - **Authentication:** Django Auth
 - **Environment Management:** python-decouple / dotenv
 - **Deployment Ready:** Yes
@@ -35,12 +35,19 @@ This project is designed to demonstrate backend architecture, authentication sys
 
 ## 📁 Project Structure
 
-accounts/ → Authentication & Dashboard
-core/ → Main pages & CMS models
-projects/ → Project models & views
-portfolio/ → Main settings & URL config
-templates/ → HTML templates
-static/ → CSS & static assets
+portfolio_project/
+│
+├── accounts/           → Authentication & Dashboard
+├── api/                → REST API
+├── contact/            → Contact form & email logic
+├── media/              → Uploaded media files
+├── portfolio/          → Core app
+├── portfolio_project/  → Main settings & URL configuration
+├── projects/           → Project models & views
+├── screenshots/        → README screenshots
+├── static/             → Static files
+├── staticfiles/        → Collected static files
+└──  theme/              → UI templates & theme configuration
 
 ---
 
