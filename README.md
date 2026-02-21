@@ -35,8 +35,6 @@ This project is designed to demonstrate backend architecture, authentication sys
 
 ## 📁 Project Structure
 
-## 📁 Project Structure
-
 accounts/ → Authentication & Dashboard  
 api/ → REST API  
 contact/ → Contact form & email logic  
